@@ -1,0 +1,53 @@
+/**********************/
+/**********************/
+body {
+  color: #3f4144;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+  -ms-overflow-style: scrollbar;
+}
+h1,
+.h1 {
+  font-size: 36px;
+}
+h2,
+.h2 {
+  font-size: 34px;
+}
+h3,
+.h3 {
+  font-size: 32px;
+}
+h4,
+.h4 {
+  font-size: 31px;
+}
+h5,
+.h5 {
+  font-size: 29px;
+}
+h6,
+.h6 {
+  font-size: 26px;
+}
+a {
+  outline: none;
+  color: #18aff4;
+  text-decoration: underline;
+  font-size: 16px;
+}
+a:link,
+a:visited {
+  outline: none;
+  text-decoration: none;
+}
+a:active,
+a:focus,
+a:hover {
+  text-decoration: underline;
+}
+.ul-nospace {
+  margin: 0;
+  padding: 0;
+}
