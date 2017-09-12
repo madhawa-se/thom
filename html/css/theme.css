@@ -1,0 +1,507 @@
+/**
+* Custom styles for this theme
+*/
+#front-page-edit-link {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+#front-page-edit-link .tabs {
+  border: none;
+}
+#front-page-edit-link li:nth-child(1) {
+  display: none;
+}
+#front-page-edit-link li:nth-child(3) {
+  display: none;
+}
+#front-page-edit-link li:nth-child(2) a {
+  padding: 10px 30px;
+}
+/**********************/
+/**********************/
+body {
+  color: #3f4144;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+  -ms-overflow-style: scrollbar;
+}
+h1,
+.h1 {
+  font-size: 36px;
+}
+h2,
+.h2 {
+  font-size: 34px;
+}
+h3,
+.h3 {
+  font-size: 32px;
+}
+h4,
+.h4 {
+  font-size: 31px;
+}
+h5,
+.h5 {
+  font-size: 29px;
+}
+h6,
+.h6 {
+  font-size: 26px;
+}
+a {
+  outline: none;
+  color: #18aff4;
+  text-decoration: underline;
+  font-size: 16px;
+}
+a:link,
+a:visited {
+  outline: none;
+  text-decoration: none;
+}
+a:active,
+a:focus,
+a:hover {
+  text-decoration: underline;
+}
+.ul-nospace {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 1em;
+  color: #4e2071;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+}
+h2 > a {
+  font-size: inherit;
+}
+ul,
+ul.menu {
+  margin: 20px 0 10px 40px;
+  padding: 0;
+}
+ul li,
+ul.menu li {
+  padding: 0 0 10px 20px;
+  background: url("../images/li-bg.png") no-repeat 0 8px;
+  list-style: none;
+}
+ul li a,
+ul.menu li a {
+  color: #3f4144;
+  text-transform: uppercase;
+}
+.no-list {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.no-list li {
+  list-style-type: none;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.block ul {
+  margin: 0 0 15px 15px;
+  padding: 0;
+}
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin: 10px 0 10px 25px;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+p {
+  margin: 0 0 15px;
+}
+.no-margin {
+  margin: 0;
+}
+.no-bullets li {
+  background: none;
+}
+.no-padding {
+  padding: 0;
+}
+.ul-div {
+  margin: 0;
+  padding: 0;
+}
+ul.primary li {
+  background: none;
+}
+ul.links.inline li {
+  display: inline-block;
+  padding: 0;
+  background: none;
+  list-style: none;
+  font-weight: normal !important;
+  font-size: initial;
+}
+ul.links.inline li a {
+  min-width: inherit;
+  padding: 0 !important;
+  background: none !important;
+}
+ul.links.inline li a:after {
+  content: '' !important;
+}
+ul.links.inline li a:hover {
+  background: none;
+  color: inherit;
+}
+tbody {
+  border: none;
+}
+body {
+  line-height: 21px;
+  margin: 0;
+}
+/*................ Helpers ...................*/
+.position-a {
+  position: absolute !important;
+}
+.position-r {
+  position: relative !important;
+}
+.margin-bottom {
+  margin: 0 0 26px;
+}
+.margin-top {
+  margin: 40px 0 0;
+}
+.text-tr {
+  text-transform: uppercase;
+}
+.ul-no-style ul {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.ul-li-no-style ul li {
+  padding: 0 !important;
+  background: none !important;
+  list-style: none !important;
+}
+.clear-both {
+  clear: both;
+}
+.clear-left {
+  clear: left;
+}
+.clear-right {
+  clear: right;
+}
+.text-a-r {
+  text-align: right;
+}
+.text-a-c {
+  text-align: center;
+}
+.hidn-txt {
+  display: none !important;
+}
+.text-decoration-none a {
+  text-decoration: none;
+}
+.bottom-border {
+  border-bottom: 1px solid #e2e2e2;
+}
+.icon-rest {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-view {
+  padding-right: 12px;
+  font-family: fontawesome;
+}
+/*bootstrap overides*/
+.navbar-default {
+  background-color: #fff;
+  border-color: #ffffff;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #ffffff;
+}
+.navbar-default .navbar-toggle {
+  border-color: #ffffff;
+}
+.navbar-toggle {
+  margin: 0 0 0 20px;
+}
+/**/
+/** mixing */
+.img-quality {
+  image-rendering: optimizeSpeed;
+  /* STOP SMOOTHING, GIVE ME SPEED  */
+  image-rendering: -moz-crisp-edges;
+  /* Firefox                        */
+  image-rendering: -o-crisp-edges;
+  /* Opera                          */
+  image-rendering: -webkit-optimize-contrast;
+  /* Chrome (and eventually Safari) */
+  image-rendering: optimize-contrast;
+  /* CSS3 Proposed                  */
+  -ms-interpolation-mode: nearest-neighbor;
+  /* IE8+                           */
+}
+/*............... page layouts.............*/
+#container {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+#sidebar-left {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  #sidebar-left {
+    float: left;
+    width: 25%;
+  }
+}
+#main {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  #main {
+    float: left;
+    width: 100%;
+  }
+}
+#sidebar-right {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  #sidebar-right {
+    float: left;
+    width: 25%;
+  }
+}
+/*............. left sidebar ...............*/
+@media (min-width: 768px) {
+  .sidebar-left #sidebar-left {
+    right: 75%;
+  }
+}
+.sidebar-left #main {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .sidebar-left #main {
+    float: left;
+    width: 75%;
+  }
+}
+@media (min-width: 768px) {
+  .sidebar-left #main {
+    left: 25%;
+  }
+}
+/*............. right sidebar ...............*/
+.sidebar-right #main {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .sidebar-right #main {
+    float: left;
+    width: 75%;
+  }
+}
+/*............. two sidebar ...............*/
+@media (min-width: 768px) {
+  .two-sidebars #sidebar-left {
+    right: 50%;
+  }
+}
+.two-sidebars #main {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .two-sidebars #main {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .two-sidebars #main {
+    left: 25%;
+  }
+}
+.icon-awesome {
+  padding-right: 12px;
+  font-family: fontawesome;
+}
+.ui-btn,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  border: 2px solid #ffffff;
+  border-radius: 30px;
+  background-color: #18aff4;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  padding: 18px;
+}
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid #FFFFFF;
+  border-radius: 30px;
+}
+@media only screen and (max-width: 767px) {
+  .ui-btn,
+  button,
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"] {
+    font-size: 15px;
+    line-height: 18px;
+    padding: 12px;
+  }
+}
+.header {
+  background-color: #ffffff;
+  padding-top: 14px;
+}
+.header .navigation .primary-links {
+  font-size: 14px;
+  text-align: center;
+}
+.header .logo img {
+  image-rendering: optimizeSpeed;
+  /* STOP SMOOTHING, GIVE ME SPEED  */
+  image-rendering: -moz-crisp-edges;
+  /* Firefox                        */
+  image-rendering: -o-crisp-edges;
+  /* Opera                          */
+  image-rendering: -webkit-optimize-contrast;
+  /* Chrome (and eventually Safari) */
+  image-rendering: optimize-contrast;
+  /* CSS3 Proposed                  */
+  -ms-interpolation-mode: nearest-neighbor;
+  /* IE8+                           */
+}
+.header .address .content .content {
+  text-align: right;
+  font-size: 0.778em;
+  font-weight: bold;
+}
+.header .address .content .content ul li {
+  display: inline;
+  color: #18aff4;
+}
+.header .mob-nav .navbar-header .logo {
+  float: left;
+}
+.header .mob-nav .navbar-header .logo .logo-link img {
+  width: 156px;
+}
+.header .mob-nav .navbar-header .search {
+  float: right;
+}
+.header .mob-nav .navbar-header .search,
+.header .mob-nav .navbar-header .navbar-toggle {
+  padding-top: 12px;
+}
+.header .mob-nav .navbar-header .search a,
+.header .mob-nav .navbar-header .navbar-toggle {
+  color: #3f4144;
+  font-size: 29px;
+}
+.banner {
+  background-image: url(../images/Balloon2.png);
+  color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 632px;
+}
+.banner .title {
+  color: #FFFFFF;
+  font-size: 70.88px;
+  font-weight: normal;
+  line-height: 83px;
+  width: 575px;
+  margin-bottom: 50px;
+  margin-top: 156px;
+}
+.banner .title span {
+  font-weight: bold;
+}
+.banner .para {
+  margin-bottom: 60px;
+}
+@media only screen and (max-width: 767px) {
+  .banner {
+    background-image: url(../images/Balloon2.png);
+    color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 350px;
+  }
+  .banner .title {
+    font-size: 35px;
+    line-height: 41px;
+    width: 214px;
+    margin-bottom: 32px;
+    margin-top: 32px;
+  }
+  .banner .para {
+    margin-bottom: 42px;
+  }
+}
+.help {
+  background-color: #bd58d4;
+}
+.help .ul-div .img-card div {
+  background-color: rgba(78, 32, 113, 0.3);
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  line-height: 6.5;
+  text-align: center;
+}
+.text-img-blocks {
+  background-image: url(../images/wall1.png);
+  background-position: center;
+  background-size: cover;
+  background-size: 50%;
+  background-position: 0;
+  background-repeat: no-repeat;
+}

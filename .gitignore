@@ -1,2 +1,3 @@
 # Folders to ignore
 .DS_store
+/html/nbproject/private/

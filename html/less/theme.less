@@ -1,0 +1,432 @@
+/**
+* Custom styles for this theme
+*/
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+@import "bootstrap-less/variables.less";
+@import "bootstrap-less/mixins.less";
+
+//
+// Load custom style for front page edit link
+// --------------------------------------------------
+@import "front-page-edit-link.less";
+
+//
+// Load custom variables
+// --------------------------------------------------
+@import "theme-variables.less";
+
+
+
+h1,h2,h3,h4,h5,h6{
+    margin: 0 0 1em;
+    color: @color-pink-dark;
+    font-family: @font-family-roboto;
+    font-weight: 600;
+}
+
+h2{
+    >a{
+        font-size: inherit;
+    }
+}
+ul,
+ul.menu{
+    margin: 20px 0 10px 40px;
+    padding: 0;
+    li {
+        padding: 0 0 10px 20px;
+        background: url("../images/li-bg.png") no-repeat 0 8px;
+        list-style: none;
+        a{
+            color:@color-gray;
+            text-transform: uppercase;
+        }
+    }
+}
+.no-list{
+    margin: 0 !important;
+    padding: 0 !important;
+    li{
+        list-style-type: none;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
+.block ul {
+    margin: 0 0 15px 15px;
+    padding: 0;
+}
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+    margin: 10px 0 10px 25px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+p {
+    margin: 0 0 15px;
+}
+.no-margin{
+    margin: 0;
+}
+.no-bullets{
+    li{
+        background: none;
+    }
+}
+.no-padding{
+    padding: 0;
+}
+.ul-div{
+    margin: 0;
+    padding: 0;
+
+}
+
+ul.primary li {
+    background: none;
+}
+ul.links.inline {
+    li {
+        display: inline-block;
+        padding: 0;
+        background: none;
+        list-style: none;
+        font-weight: normal !important;
+        font-size: initial;
+        a{
+            min-width: inherit;
+            padding: 0 !important;
+            background: none !important;
+            &:after{
+                content: '' !important;
+            }
+            &:hover{
+                background: none;
+                color: inherit;
+            }
+        }
+    }
+}
+tbody {
+    border: none;
+}
+body{
+    line-height: @line-height-base;
+    margin: 0;
+}
+
+/*................ Helpers ...................*/
+.position-a {
+    position: absolute !important;
+}
+.position-r {
+    position: relative !important;
+}
+.margin-bottom {
+    margin: 0 0 26px;
+}
+.margin-top{
+    margin: 40px 0 0;
+}
+.text-tr {
+    text-transform: uppercase;
+}
+.ul-no-style ul {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.ul-li-no-style ul li {
+    padding: 0 !important;
+    background: none !important;
+    list-style: none !important;
+}
+.clear-both {
+    clear: both;
+}
+.clear-left {
+    clear: left;
+}
+.clear-right {
+    clear: right;
+}
+.text-a-r {
+    text-align: right;
+}
+.text-a-c {
+    text-align: center;
+}
+.hidn-txt {
+    display: none !important;
+}
+.text-decoration-none a {
+    text-decoration: none;
+}
+.bottom-border{
+    border-bottom: 1px solid #e2e2e2;
+}
+.icon-rest {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-view{
+    padding-right:12px;
+    font-family: fontawesome;
+}
+
+
+/*bootstrap overides*/
+.navbar-default {
+    background-color: #fff;
+    border-color: #ffffff;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color:@color-white;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: @color-white;
+}
+
+.navbar-toggle{
+    margin:0 0 0 20px;
+}
+/**/
+
+/** mixing */
+.img-quality{
+    image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+    image-rendering: -moz-crisp-edges;          /* Firefox                        */
+    image-rendering: -o-crisp-edges;            /* Opera                          */
+    image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+    image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+    -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+}
+/*............... page layouts.............*/
+#container {
+    .make-row();
+}
+#sidebar-left {
+    .make-sm-column(3);
+}
+#main {
+    .make-sm-column(12);
+}
+#sidebar-right {
+    .make-sm-column(3);
+}
+
+/*............. left sidebar ...............*/
+.sidebar-left {
+    #sidebar-left {
+        .make-sm-column-pull(9);
+    }
+    #main {
+        .make-sm-column(9);
+        .make-sm-column-push(3);
+    }
+}
+/*............. right sidebar ...............*/
+.sidebar-right {
+    #main {
+        .make-sm-column(9);
+    }
+}
+
+/*............. two sidebar ...............*/
+.two-sidebars {
+    #sidebar-left {
+        .make-sm-column-pull(6);
+    }
+    #main {
+        .make-sm-column(6);
+        .make-sm-column-push(3);
+    }
+}
+
+//font awesome
+.icon-awesome{
+    padding-right: 12px;
+    font-family: fontawesome;
+}
+
+// btn
+.ui-btn,button,input[type="submit"], input[type="reset"],input[type="button"]{
+    border: 2px solid @color-white;
+    border-radius: 30px;
+    background-color: @color-blue;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    color:white;
+    padding: 18px;
+}
+.btn-outline{
+    background-color:transparent;
+    border: 2px solid #FFFFFF;
+    border-radius: 30px;
+}
+.btn-sqare{
+
+}
+
+@media only screen and (max-width : 767px) {
+    .ui-btn,button,input[type="submit"], input[type="reset"],input[type="button"]{
+      	font-size: 15px;
+      	line-height: 18px;
+        padding: 12px;
+    }
+}
+
+.header{
+    background-color:@color-white;
+    padding-top:14px;
+    .navigation{
+        .primary-links{
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+    .logo{
+        img{
+            .img-quality;
+        }
+    }
+    .address{
+        .content{
+            .content{
+                text-align: right;
+                font-size:0.778em;
+                font-weight:bold;
+                ul{
+                    li{
+                        display: inline;
+                        color:@color-blue;
+                    }
+                }
+            }
+        }
+
+    }
+    .mob-nav{
+        .navbar-header{
+            .logo{
+                float:left;
+                .logo-link{
+                    img{
+                        width: 156px;
+                    }
+                }
+            }
+            .search{
+                float: right;
+            }
+            .search,.navbar-toggle{
+                padding-top: 12px;
+            }
+            .search a,.navbar-toggle{
+                color:@color-base;
+                font-size: 29px;
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width : 767px) {
+    .header{
+        .navigation{
+            .primary-links{
+
+            }
+        }
+    }
+}
+
+.banner{
+  background-image: url(../images/Balloon2.png);
+  color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 632px;
+
+    .title{
+
+        color: #FFFFFF;
+        font-size: 70.88px;
+        font-weight: normal;
+        line-height: 83px;
+        width: 575px;
+        margin-bottom: 50px;
+        margin-top: 156px;
+        span{
+          font-weight: bold;
+        }
+      }
+      .para{
+          margin-bottom:60px;
+      }
+
+
+}
+
+@media only screen and (max-width : 767px) {
+  .banner{
+    background-image: url(../images/Balloon2.png);
+    color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:350px;
+
+      .title{
+          font-size: 35px;
+          line-height: 41px;
+          width: 214px;
+          margin-bottom: 32px;
+          margin-top: 32px;
+
+        }
+        .para{
+            margin-bottom:42px;
+        }
+
+
+  }
+}
+
+.help{
+    background-color: @color-pink-light;
+
+    .ul-div{
+        .img-card{
+            div{
+                background-color: rgba(78,32,113,0.3);
+                width: 118px;
+                height: 118px;
+                border-radius: 50%;
+                line-height: 6.5;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.text-img-blocks{
+        background-image: url(../images/wall1.png);
+        background-position: center;
+        background-size: cover;
+        background-size: 50%;
+        background-position: 0;
+        background-repeat: no-repeat;
+}
