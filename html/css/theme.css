@@ -488,6 +488,13 @@ input[type="button"] {
 }
 .help {
   background-color: #bd58d4;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.help,
+.help .title {
+  color: white;
 }
 .help .ul-div .img-card div {
   background-color: rgba(78, 32, 113, 0.3);
@@ -496,6 +503,7 @@ input[type="button"] {
   border-radius: 50%;
   line-height: 6.5;
   text-align: center;
+  display: inline-block;
 }
 .text-img-blocks {
   background-image: url(../images/wall1.png);
