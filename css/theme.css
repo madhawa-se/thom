@@ -1,6 +1,6 @@
 /**
- * Custom styles for this theme
- */
+* Custom styles for this theme
+*/
 #front-page-edit-link {
   position: fixed;
   bottom: 0;
@@ -82,7 +82,7 @@ h6 {
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
 }
-h2 > a {
+h2 a {
   font-size: inherit;
 }
 ul,
@@ -136,6 +136,10 @@ p {
 .no-padding {
   padding: 0;
 }
+.ul-div {
+  margin: 0;
+  padding: 0;
+}
 ul.primary li {
   background: none;
 }
@@ -164,6 +168,7 @@ tbody {
 }
 body {
   line-height: 21px;
+  margin: 0;
 }
 /*................ Helpers ...................*/
 .position-a {
@@ -226,9 +231,12 @@ body {
   padding-right: 12px;
   font-family: fontawesome;
 }
+.ui-clearfix {
+  clear: both;
+}
 /*bootstrap overides*/
 .navbar-default {
-  background-color: #fff;
+  background-color: #ffffff;
   border-color: #ffffff;
 }
 .navbar-default .navbar-toggle:hover,
@@ -357,6 +365,16 @@ body {
     left: 25%;
   }
 }
+.front h2 {
+  font-size: 46px;
+  margin-bottom: 32px;
+}
+.in-block {
+  display: inline-block;
+}
+ul.in-block li {
+  display: inline-block;
+}
 .icon-awesome {
   padding-right: 12px;
   font-family: fontawesome;
@@ -371,10 +389,52 @@ input[type="button"] {
   background-color: #18aff4;
   font-weight: bold;
   text-align: center;
+  font-size: 18px;
+  color: white;
+  padding: 18px;
+}
+.ui-btn {
+  min-width: 250px;
+}
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 30px;
+}
+.btn-sqare {
+  border-radius: 0;
+}
+@media only screen and (max-width: 767px) {
+  .ui-btn,
+  button,
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"] {
+    font-size: 15px;
+    line-height: 18px;
+    padding: 12px;
+  }
+  .ui-btn {
+    width: 100%;
+  }
+  a.ui {
+    display: block;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .front h2.title {
+    font-size: 30px !important;
+  }
+  .front .para {
+    font-size: 0.889em;
+  }
 }
 .header {
   background-color: #ffffff;
   padding-top: 14px;
+}
+.header .navigation {
+  margin-bottom: 20px;
 }
 .header .navigation .primary-links {
   font-size: 14px;
@@ -420,4 +480,214 @@ input[type="button"] {
 .header .mob-nav .navbar-header .navbar-toggle {
   color: #3f4144;
   font-size: 29px;
+}
+.banner {
+  color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 632px;
+}
+.banner h2 {
+  color: #ffffff;
+  font-size: 70.88px;
+  font-weight: normal;
+  line-height: 83px;
+  width: 575px;
+  margin-bottom: 50px;
+  margin-top: 156px;
+}
+.banner h2 span {
+  font-weight: bold;
+}
+.banner p {
+  margin-bottom: 60px;
+}
+@media only screen and (max-width: 767px) {
+  .banner {
+    height: 350px;
+  }
+  .banner h2 {
+    font-size: 35px;
+    line-height: 41px;
+    width: 214px;
+    margin-bottom: 32px;
+    margin-top: 32px;
+  }
+  .banner p {
+    margin-bottom: 42px;
+  }
+}
+.help,
+.accounting,
+.help h2,
+.accounting h2 {
+  color: #ffffff;
+}
+.help {
+  background-color: #bd58d4;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.help,
+.help .title {
+  color: white;
+}
+.help .ul-div .img-card div {
+  background-color: rgba(78, 32, 113, 0.3);
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  line-height: 6.5;
+  text-align: center;
+  display: inline-block;
+}
+.help .ul-div .img-card p {
+  padding: 14px 25px;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.help .para {
+  margin-bottom: 54px;
+}
+@media only screen and (max-width: 991px) {
+  .help .ul-div .img-card div {
+    line-height: 4.5;
+    width: 85px;
+    height: 85px;
+  }
+  .help .ul-div .img-card p {
+    padding: 14px 0;
+    font-size: 14px;
+  }
+  .help .ul-div .img-card img {
+    max-width: 50%;
+  }
+  .help .para {
+    margin-bottom: 54px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .help .ul-div li {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .help .ul-div .img-card {
+    background-color: rgba(78, 32, 113, 0.3);
+    padding: 14px 25px;
+  }
+  .help .ul-div .img-card p {
+    padding: 0px;
+  }
+  .help .para {
+    margin-bottom: 54px;
+  }
+}
+.accounting {
+  background-image: url(../images/Cloud_bg.png);
+  background-size: cover;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.accounting .title {
+  margin-bottom: 32px;
+}
+.accounting .para {
+  margin-bottom: 60px;
+}
+.accounting .img-panel ul li {
+  padding: 16px 16px 0 0;
+}
+.accounting .img-panel .img-card {
+  width: 180px;
+  height: 150px;
+  text-align: center;
+  line-height: 8;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #ffffff;
+}
+.accounting .img-panel .in-block {
+  margin-top: 60px;
+}
+@media only screen and (max-width: 991px) {
+  .accounting .img-panel .img-card {
+    height: 82px;
+    width: 100px;
+    line-height: 4;
+  }
+  .accounting .img-panel .in-block {
+    margin-top: 60px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .accounting {
+    text-align: center;
+  }
+  .accounting .img-panel .img-card {
+    line-height: 4;
+  }
+}
+.events {
+  padding: 60px 0;
+}
+.events .title {
+  margin-top: 40px;
+}
+.events .para {
+  margin-bottom: 100px;
+}
+.events .event-card {
+  margin-top: 30px;
+  padding: 20px;
+  min-height: 220px;
+  border: 2px solid #EFEFEF;
+  position: relative;
+  border-width: 2px 2px 0 2px;
+}
+.events .event-card .img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+.events .event-card .data {
+  position: absolute;
+  bottom: 0;
+}
+.events .event-card .data .title {
+  font-weight: bold;
+  padding: 10px 0;
+}
+.events .event-card .sum {
+  font-size: 14px;
+}
+.events .event-card .date {
+  color: #18aff4;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.events .event-card + .ui-btn {
+  display: block;
+  min-width: auto;
+  margin-bottom: 30px;
+}
+.testimonial {
+  background-image: url(../images/wall1.jpg);
+  background-position: center;
+  background-size: cover;
+  background-size: 50%;
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-color: #bd58d4;
+  color: #ffffff;
+}
+.testimonial .frame .text {
+  padding: 100px;
+}
+.testimonial .frame .text .title {
+  font-size: 30px;
+  line-height: 35px;
 }

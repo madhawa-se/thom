@@ -77,6 +77,34 @@
  * @see template_preprocess()
  * @see template_preprocess_page()
  */
+$banner_image = $node->field_homepage_image_1[0]['filepath'];
+$banner_strapline = $node->field_homepage_strapline_1[0]['value'];
+//$banner_content = $node->field_banner_content[0]['value'];
+//$banner_company = $node->field_banner_company[0]['value'];
+$banner_action = $node->field_homepage_cta_1[0]['value'];
+$banner_link = $node->field_homepage_link_1[0]['title'];
+
+
+
+//services
+$services_header = $node->field_services_heading[0]['value'];
+$services_body = $node->field_services_strapline[0]['value'];
+
+//accounting
+$accounting_header = $node->field_onlineaccounting_heading[0]['value'];
+$accounting_body = $node->field_onlineaccounting_body[0]['value'];
+$accounting_cta_link = $node->field_onlineaccouting_cta[0]['url'];
+$accounting_cta_text = $node->field_onlineaccouting_cta[0]['title'];
+
+
+//events
+$events_header = $node->field_events_heading[0]['value'];
+$events_body = $node->field_events_signup_body[0]['value'];
+$events_cta_link = $node->field_events_signup_cta[0]['value'];
+$events_cta_text = $node->field_events_signup_cta_text[0]['value'];
+
+//$main_action_left = $node->field_ctaleft_content[0]['view'];
+//$main_action_right = $node->field_ctaright_content[0]['view'];
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -173,8 +201,119 @@
 
         </div>
         <!-- /header -->
+        <div class="fluid banner" style="background-image: url(<?php print $banner_image ?>);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-11 col-sm-push-1">
+                        <?php echo $banner_strapline ?>
+
+                        <a class="ui-btn btn-outline" href=" <?php print $banner_action ?>"><?php print $banner_link ?></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fluid help">
+            <div class="container">
+                <div class="row">
+
+                    <h2 class="title"><?php print $services_header ?></h2>
+
+                    <div class="col-sm-push-2 col-sm-8">
+                        <p class="para"><?php print $services_body ?></p>
+                    </div>
+                    <ul class="ul-div  ui-clearfix">
 
 
+                        <?php
+                        for ($i = 1; $i <= 5; $i++) {
+
+                            $services_icon = $node->{"field_services_image_$i"}[0]['view'];
+                            $services_text = $node->{"field_services_cta_$i"}[0]['title'];
+                            $services_link = $node->{"field_services_cta_$i"}[0]['url'];
+                            ?>
+
+                            <li class="col-sm-2 col-sm-push-1 col-xm-12">
+                                <div class="img-card">
+                                    <div class="hidden-xs"><?php print $services_icon ?></div>
+                                    <p><?php print $services_text ?></p>
+                                </div>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="fluid accounting">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-sm-6">
+                        <h2 class="title"><?php print $accounting_header ?></h2>
+                        <p class="para"><?php print $accounting_body ?></p>
+                        <a class="ui-btn btn-outline in-block" href=" <?php print $accounting_cta_link ?>"><?php print $accounting_cta_text ?></a>
+                    </div>
+
+                    <div class="col-sm-6 img-panel">
+                        <ul class="in-block">
+                            <?php
+                            for ($i = 1; $i <= 4; $i++) {
+                                $accounting_icon = $node->{"field_onlineaccouting_image_$i"}[0]['view'];
+                                ?>
+                                <li class="">
+                                    <div class="img-card">
+                                        <?php print $accounting_icon ?>
+                                    </div>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="events">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-sm-6 col-sm-push-1">
+                        <h2 class="title"><?php print $events_header ?></h2>
+                        <p class="para"><?php print $events_body ?></p>
+                        <a class="ui-btn in-block" href=" <?php print $events_cta_link ?>"><?php print $events_cta_text ?></a>
+                    </div>
+                    <?php if (!empty($events)): ?>
+                        <div class="col-sm-4 col-sm-push-1">
+                            <?php print $events; ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="fluid testimonial">
+            <div class="container">
+                <div class="row-fluid">
+                    <div class="col-sm-6 img">
+
+                    </div>
+                    <div class="col-sm-6 frame">
+                        <div class="text">
+                            <p class="title">“A very professional firm, who understand our business and deliver a first class service.”</p>
+                            <p>Ian Fraser, First Scottish Group Limited</p>
+                            <a class="ui-btn btn-outline">TESTIMONIALS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="page" class="container">
 
 

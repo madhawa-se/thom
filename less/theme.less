@@ -1,6 +1,6 @@
 /**
- * Custom styles for this theme
- */
+* Custom styles for this theme
+*/
 
 //
 // Load core variables and mixins
@@ -28,13 +28,13 @@ h1,h2,h3,h4,h5,h6{
 }
 
 h2{
-    >a{
+    a{
         font-size: inherit;
     }
 }
 ul,
 ul.menu{
-    margin: 20px 0 10px 40px; 
+    margin: 20px 0 10px 40px;
     padding: 0;
     li {
         padding: 0 0 10px 20px;
@@ -56,7 +56,7 @@ ul.menu{
     }
 }
 .block ul {
-    margin: 0 0 15px 15px; 
+    margin: 0 0 15px 15px;
     padding: 0;
 }
 ol ol,
@@ -83,6 +83,11 @@ p {
 }
 .no-padding{
     padding: 0;
+}
+.ul-div{
+    margin: 0;
+    padding: 0;
+
 }
 
 ul.primary li {
@@ -115,6 +120,7 @@ tbody {
 }
 body{
     line-height: @line-height-base;
+    margin: 0;
 }
 
 /*................ Helpers ...................*/
@@ -178,12 +184,14 @@ body{
     padding-right:12px;
     font-family: fontawesome;
 }
-
+.ui-clearfix{
+    clear: both;
+}
 
 /*bootstrap overides*/
 .navbar-default {
-    background-color: #fff;
-    border-color: #ffffff;
+    background-color: @color-white;
+    border-color: @color-white;
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
     background-color:@color-white;
@@ -248,6 +256,22 @@ body{
         .make-sm-column-push(3);
     }
 }
+.front{
+
+    h2{
+        font-size: 46px;
+        margin-bottom: 32px;
+    }
+}
+//inline
+.in-block{
+    display: inline-block;
+}
+ul.in-block{
+    li{
+        display: inline-block;
+    }
+}
 
 //font awesome
 .icon-awesome{
@@ -259,21 +283,56 @@ body{
 .ui-btn,button,input[type="submit"], input[type="reset"],input[type="button"]{
     border: 2px solid @color-white;
     border-radius: 30px;
-    background-color: @color-blue; 
+    background-color: @color-blue;
     font-weight: bold;
     text-align: center;
+    font-size: 18px;
+    color:white;
+    padding: 18px;
+}
+.ui-btn{
+    min-width: 250px;
 }
 .btn-outline{
-
+    background-color:transparent;
+    border: 2px solid @color-white;
+    border-radius: 30px;
 }
 .btn-sqare{
+    border-radius: 0;
+}
 
+@media only screen and (max-width : 767px) {
+    .ui-btn,button,input[type="submit"], input[type="reset"],input[type="button"]{
+        font-size: 15px;
+        line-height: 18px;
+        padding: 12px;
+    }
+    .ui-btn{
+        width: 100%;
+    }
+    a.ui{
+        display: block;
+    }
+}
+
+
+@media only screen and (max-width : 767px) {
+    .front{
+        h2.title{
+            font-size: 30px !important;
+        }
+        .para{
+            font-size:0.889em;
+        }
+    }
 }
 
 .header{
     background-color:@color-white;
     padding-top:14px;
     .navigation{
+        margin-bottom: 20px;
         .primary-links{
             font-size: 14px;
             text-align: center;
@@ -329,7 +388,267 @@ body{
     .header{
         .navigation{
             .primary-links{
+
             }
         }
     }
+}
+
+.banner{
+    color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 632px;
+
+    h2{
+        color: @color-white;
+        font-size: 70.88px;
+        font-weight: normal;
+        line-height: 83px;
+        width: 575px;
+        margin-bottom: 50px;
+        margin-top: 156px;
+        span{
+            font-weight: bold;
+        }
+    }
+    p{
+        margin-bottom:60px;
+    }
+
+
+}
+
+@media only screen and (max-width : 767px) {
+    .banner{
+        height:350px;
+
+        h2{
+            font-size: 35px;
+            line-height: 41px;
+            width: 214px;
+            margin-bottom: 32px;
+            margin-top: 32px;
+
+        }
+        p{
+            margin-bottom:42px;
+        }
+
+
+    }
+}
+
+.help,.accounting{
+    &,h2{
+        color:@color-white;  
+    }
+}
+.help{
+    background-color: @color-pink-light;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    &,.title{
+        color: white;
+    }
+
+    .ul-div{
+        .img-card{
+            div{
+                background-color: rgba(78,32,113,0.3);
+                width: 118px;
+                height: 118px;
+                border-radius: 50%;
+                line-height: 6.5;
+                text-align: center;
+                display: inline-block;
+            }
+            p{
+                padding: 14px 25px;
+                margin: 0;
+                text-transform: uppercase;
+                font-weight: bold;
+
+            }
+        }
+    }
+
+    .para{
+        margin-bottom: 54px;
+    }
+}
+@media only screen and (max-width : 991px) {
+    .help{
+        .ul-div{
+            .img-card{
+                div{
+                    line-height: 4.5;
+                    width: 85px;
+                    height: 85px;
+                }
+                p{
+                    padding: 14px 0;
+                    font-size: 14px;
+                }
+                img{
+                    max-width: 50%;
+                }
+            }
+        }
+        .para{
+            margin-bottom: 54px;
+        }
+    }
+}
+@media only screen and (max-width : 767px) {
+    .help{
+        .ul-div{
+            li{
+                padding-left: 0;
+                padding-right: 0;
+            }
+            .img-card{
+                background-color: rgba(78,32,113,0.3);
+                padding: 14px 25px;
+                div{
+                }
+                p{
+                    padding: 0px;
+                }
+            }
+        }
+        .para{
+            margin-bottom: 54px;
+        }
+    }
+}
+//accounting
+.accounting{
+    background-image: url(../images/Cloud_bg.png);
+    background-size: cover;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    .title{
+        margin-bottom: 32px;
+    }
+    .para{
+        margin-bottom: 60px;
+    }
+    .img-panel{
+        ul{
+            li{
+                padding: 16px 16px 0 0;
+            }
+        }
+        .img-card{
+            width: 180px;
+            height: 150px;
+            text-align: center;
+            line-height: 8;
+            background-color: rgba(255,255,255,0.8);
+            border: 2px solid @color-white;
+        }
+        .in-block{
+            margin-top: 60px;
+        }
+    }
+}
+@media only screen and (max-width : 991px) {
+    .accounting{
+        .img-panel{
+            .img-card{
+                height: 82px;	
+                width: 100px;
+                line-height:4;
+            }
+            .in-block{
+                margin-top: 60px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : 767px) {
+    .accounting{
+        text-align: center;
+        .img-panel{
+            .img-card{
+                line-height:4;
+            }
+
+        }
+    }
+}
+
+//events
+.events{
+    padding: 60px 0;
+    .title{
+        margin-top: 40px;
+    }
+    .para{
+        margin-bottom: 100px;
+    }
+    .event-card{
+        margin-top: 30px;
+        padding: 20px;
+        min-height: 220px;
+        border: 2px solid #EFEFEF;
+        position: relative;
+        border-width: 2px 2px 0 2px;
+
+        .img{
+            position: absolute;
+            right:0;
+            top: 0;
+            z-index: -1;
+        }
+        .data{
+            position: absolute;
+            bottom: 0;
+            .title{
+                font-weight: bold;
+                padding: 10px 0;
+            }
+        }
+        .sum{
+            font-size: 14px;
+        }
+        .date{
+            color:@color-blue;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        & + .ui-btn{
+            display: block;
+            min-width: auto;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+//testomonial
+.testimonial{
+    background-image: url(../images/wall1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-size: 50%;
+    background-position: 0;
+    background-repeat: no-repeat;
+    background-color: @color-pink-light;
+    color:@color-white;
+    .frame{
+        .text{
+            padding: 100px;
+            .title{
+                font-size: 30px;
+                line-height: 35px;
+            }
+        }
+    }
+
+
 }
