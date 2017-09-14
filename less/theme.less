@@ -169,9 +169,7 @@ body{
 .text-decoration-none a {
     text-decoration: none;
 }
-.bottom-border{
-    border-bottom: 1px solid #e2e2e2;
-}
+
 .icon-rest {
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
@@ -186,6 +184,9 @@ body{
 }
 .ui-clearfix{
     clear: both;
+}
+.center{
+    text-align: center;
 }
 
 /*bootstrap overides*/
@@ -289,6 +290,10 @@ ul.in-block{
     font-size: 18px;
     color:white;
     padding: 18px;
+}
+a.ui-btn{
+    display: inline-block;
+    text-decoration: none;
 }
 .ui-btn{
     min-width: 250px;
@@ -595,7 +600,7 @@ ul.in-block{
         margin-top: 30px;
         padding: 20px;
         min-height: 220px;
-        border: 2px solid #EFEFEF;
+        border: 2px solid @color-white-dark;
         position: relative;
         border-width: 2px 2px 0 2px;
 
@@ -629,10 +634,17 @@ ul.in-block{
         }
     }
 }
+@media only screen and (max-width : 767px) {
+    .events{
+        .para{
+            margin-bottom: 42px;
+        }
+    }
+}
+
 
 //testomonial
 .testimonial{
-    background-image: url(../images/wall1.jpg);
     background-position: center;
     background-size: cover;
     background-size: 50%;
@@ -642,13 +654,105 @@ ul.in-block{
     color:@color-white;
     .frame{
         .text{
-            padding: 100px;
+            padding: 15.52%;
             .title{
-                font-size: 30px;
-                line-height: 35px;
+                font-size: 1.667em;
+                line-height: 1.17;
+            }
+            .name{
+                color: @color-pink-dark;
+                margin: 38px 0;
             }
         }
     }
+}
 
+@media only screen and (max-width : 991px) {
+    .testimonial{
+        .frame{
+            .text{
+                font-size: 0.9em;
+                padding: 12%;
+                .name{
+                    margin: 25px 0;
+                }
+            }
 
+        }
+    }
+}
+@media only screen and (max-width : 767px) {
+    .testimonial{
+        background-image:none !important;
+        .frame{
+            .text{
+                font-size: 0.83em;
+                padding: 12%;
+                .name{
+                    margin: 16px 0;
+                }
+            }
+        }
+    }
+}
+//vac
+
+.vacancies{
+    padding: 70px 0 60px 0px;
+    background-color: @color-green;
+    color: @color-white;
+    .center{
+        padding: 0 24%;
+
+        .title{
+            //group
+            font-size: 30px;
+            color:inherit;
+            margin-bottom: 1em;
+        }
+        .para{
+            margin-bottom: 34px;
+        }
+        .ui-btn{
+
+        }
+    }
+}
+
+@media only screen and (max-width : 767px) {
+    .vacancies{
+        padding: 40px 0;
+        .center{
+            padding: 0;
+            .title{
+                margin-bottom: 40px;
+            }
+            .para{
+                margin-bottom: 40px;
+            }
+            .ui-btn{
+                font-size: 1em;
+            }
+        }
+    }
+}
+
+//vacancies intro
+.vacancies_intro{
+    background-position: 100% center;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-color: @color-white;
+    .text{
+        padding:100px 0;
+        .title{
+            font-size: 2.556em;
+            line-height: 1.174em;
+        }
+        .name{
+            color: @color-pink-dark;
+            margin: 38px 0;
+        }
+
+    }
 }

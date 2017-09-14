@@ -103,6 +103,16 @@ $events_body = $node->field_events_signup_body[0]['value'];
 $events_cta_link = $node->field_events_signup_cta[0]['value'];
 $events_cta_text = $node->field_events_signup_cta_text[0]['value'];
 
+//testimonial
+
+$testimonial_image = $node->field_testimonials_image[0]['filepath'];
+
+//vac
+$vac_header = $node->field_vacancies_heading[0]['value'];
+$vac_body = $node->field_vacancies_signup_body[0]['value'];
+$vac_cta_url = $node->field_vacancies_signup_cta[0]['value'];
+$vac_cta_text = $node->field_vacancies_signup_text[0]['value'];
+
 //$main_action_left = $node->field_ctaleft_content[0]['view'];
 //$main_action_right = $node->field_ctaright_content[0]['view'];
 ?>
@@ -216,15 +226,28 @@ $events_cta_text = $node->field_events_signup_cta_text[0]['value'];
         <div class="fluid help">
             <div class="container">
                 <div class="row">
-
-                    <h2 class="title"><?php print $services_header ?></h2>
-
                     <div class="col-sm-push-2 col-sm-8">
-                        <p class="para"><?php print $services_body ?></p>
+
+                        <div id="content">
+                            <?php if (!empty($title)) { ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php } ?>
+                            <?php if (!empty($tabs)): ?><div class="tabs"><?php print $tabs; ?></div><?php endif; ?>
+                            <?php
+                            if (!empty($messages)): print $messages;
+                            endif;
+                            ?>
+                            <?php
+                            if (!empty($help)): print $help;
+                            endif;
+                            ?>
+                            <div id="content-content" class="clear-block">
+                                <div class="para">
+                                    <?php print $content; ?>
+                                </div> <!-- /content -->
+                            </div>
+                            <?php print $feed_icons; ?>
+                        </div>
                     </div>
                     <ul class="ul-div  ui-clearfix">
-
-
                         <?php
                         for ($i = 1; $i <= 5; $i++) {
 
@@ -241,11 +264,10 @@ $events_cta_text = $node->field_events_signup_cta_text[0]['value'];
                             </li>
                         <?php } ?>
                     </ul>
+
                 </div>
             </div>
         </div>
-
-
 
         <div class="fluid accounting">
             <div class="container">
@@ -286,11 +308,11 @@ $events_cta_text = $node->field_events_signup_cta_text[0]['value'];
                         <p class="para"><?php print $events_body ?></p>
                         <a class="ui-btn in-block" href=" <?php print $events_cta_link ?>"><?php print $events_cta_text ?></a>
                     </div>
-                    <?php if (!empty($events)): ?>
+                    <?php if (!empty($events)) { ?>
                         <div class="col-sm-4 col-sm-push-1">
                             <?php print $events; ?>
                         </div>
-                    <?php endif; ?>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -298,54 +320,59 @@ $events_cta_text = $node->field_events_signup_cta_text[0]['value'];
 
 
 
-        <div class="fluid testimonial">
-            <div class="container">
-                <div class="row-fluid">
-                    <div class="col-sm-6 img">
-
-                    </div>
-                    <div class="col-sm-6 frame">
+        <div class="fluid testimonial" style="background-image: url(<?php print $testimonial_image ?>)">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-push-6 col-sm-6 frame">
+                        <!-- 
                         <div class="text">
                             <p class="title">“A very professional firm, who understand our business and deliver a first class service.”</p>
-                            <p>Ian Fraser, First Scottish Group Limited</p>
+                            <p class="name">Ian Fraser, First Scottish Group Limited</p>
                             <a class="ui-btn btn-outline">TESTIMONIALS</a>
+                        </div>
+                        -->
+                        <?php if (!empty($testimonial)) { ?>
+                            <div id="testimonial_slider" class="carousel slide" data-ride="carousel">
+                                <?php print $testimonial; ?>            
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="page" class="container">
-
-
-            <div id="container" class="clear-block">
-                <?php if (!empty($left)): ?>
-                    <div id="sidebar-left" class="column sidebar download">
-                        <?php print $left; ?>
-                    </div> <!-- /sidebar-left -->
-                <?php endif; ?>
-
-                <div id="main" class="column"><div id="main-squeeze">
-                        <?php if (!empty($breadcrumb)): ?><div id="breadcrumb"><?php print $breadcrumb; ?></div><?php endif; ?>
-                        <?php if (!empty($mission)): ?><div id="mission"><?php print $mission; ?></div><?php endif; ?>
-
-
-                    </div></div> <!-- /main-squeeze /main -->
-
-                <?php if (!empty($right)): ?>
-                    <div id="sidebar-right x" class="column sidebar">
-                        <?php print $right; ?>
-                    </div> <!-- /sidebar-right -->
-                <?php endif; ?>
-
-            </div> <!-- /container -->
 
 
 
-        </div> <!-- /page -->
+        <div class="fluid vacancies_intro" style="background-image: url(<?php print $testimonial_image ?>)">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">         
+                        <div class="text">
+                            <h2 class="title">Working with us</h2>
+                            <p class="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor enim ad minim incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, adipiscing. </p>
+                            <a class="ui-btn in-block" href="#">FIND OUT MORE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-
+        <div class="vacancies">
+            <div class="container">   
+                <div class="center">
+                    <h2 class="title"><?php print $vac_header ?></h2>
+                    <p class="para"><?php print $vac_body ?></p>
+                    <a class="ui-btn btn-outline" href=" <?php print $vac_cta_url ?>"><?php print $vac_cta_text ?></a>
+                </div>
+            </div>
+        </div>
 
         <?php print $closure; ?>
 
+
+        <div class="device-xs visible-xs">xs</div>
+        <div class="device-sm visible-sm">sm</div>
+        <div class="device-md visible-md">md</div>
+        <div class="device-lg visible-lg">lg</div>
     </body>
 </html>
