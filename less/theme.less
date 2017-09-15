@@ -188,6 +188,10 @@ body{
 .center{
     text-align: center;
 }
+.no-link{
+    text-decoration: none;
+    cursor: pointer;
+}
 
 /*bootstrap overides*/
 .navbar-default {
@@ -703,7 +707,6 @@ a.ui-btn{
     color: @color-white;
     .center{
         padding: 0 24%;
-
         .title{
             //group
             font-size: 30px;
@@ -744,7 +747,7 @@ a.ui-btn{
     background-repeat: no-repeat;
     background-color: @color-white;
     .text{
-        padding:100px 0;
+        padding: 15.52%;
         .title{
             font-size: 2.556em;
             line-height: 1.174em;
@@ -753,6 +756,61 @@ a.ui-btn{
             color: @color-pink-dark;
             margin: 38px 0;
         }
+        .para{
+            margin-bottom: 74px;
+        }
+    }
+}
+@media screen and (max-width: 1199px) {
+    .vacancies_intro{
+        .text{ 
+            padding: 12%;
+            font-size: 16px;
+        }
+    }
+}
 
+@media screen and (max-width: 991px) {
+    .vacancies_intro{
+        .text{ 
+            .title{
+                font-size: 2em;
+            }
+            padding: 9%;
+            font-size: 15px;
+        }
+    }
+}
+
+@media only screen and (max-width : 767px) {
+    .vacancies_intro{
+        background-image:none !important;
+        .text{ 
+            .para{
+                margin-bottom: 44px;
+            }
+        }
+    }
+}
+
+
+.news-card{
+    padding:20px 20px 5px 20px;
+    margin-bottom: 20px;
+    background-color:@color-white-dark;
+    .feed-link{
+        .no-link;
+        font-size: 1em;
+        color:@color-gray;
+        .title{
+            padding-bottom: 5px;
+            font-size: 1em;
+        }
+        .date{
+            font-size: 0.778em;
+            color:@color-blue;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
     }
 }

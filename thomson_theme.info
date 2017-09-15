@@ -15,5 +15,6 @@ regions[left]                   = Left sidebar
 regions[right]                  = Right sidebar
 regions[content]                = Content
 regions[events]                 = Events
-regions[testimonial]           = Testimonial
+regions[testimonial]            = Testimonial
+regions[feeds]                  = Feeds
 regions[footer]                 = Footer

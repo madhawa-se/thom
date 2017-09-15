@@ -234,6 +234,10 @@ body {
 .center {
   text-align: center;
 }
+.no-link {
+  text-decoration: none;
+  cursor: pointer;
+}
 /*bootstrap overides*/
 .navbar-default {
   background-color: #ffffff;
@@ -764,7 +768,7 @@ a.ui-btn {
   background-color: #ffffff;
 }
 .vacancies_intro .text {
-  padding: 100px 0;
+  padding: 15.52%;
 }
 .vacancies_intro .text .title {
   font-size: 2.556em;
@@ -773,4 +777,51 @@ a.ui-btn {
 .vacancies_intro .text .name {
   color: #4e2071;
   margin: 38px 0;
+}
+.vacancies_intro .text .para {
+  margin-bottom: 74px;
+}
+@media screen and (max-width: 1199px) {
+  .vacancies_intro .text {
+    padding: 12%;
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .vacancies_intro .text {
+    padding: 9%;
+    font-size: 15px;
+  }
+  .vacancies_intro .text .title {
+    font-size: 2em;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .vacancies_intro {
+    background-image: none !important;
+  }
+  .vacancies_intro .text .para {
+    margin-bottom: 44px;
+  }
+}
+.news-card {
+  padding: 20px 20px 5px 20px;
+  margin-bottom: 20px;
+  background-color: #efefef;
+}
+.news-card .feed-link {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1em;
+  color: #3f4144;
+}
+.news-card .feed-link .title {
+  padding-bottom: 5px;
+  font-size: 1em;
+}
+.news-card .feed-link .date {
+  font-size: 0.778em;
+  color: #18aff4;
+  text-transform: uppercase;
+  font-weight: bold;
 }

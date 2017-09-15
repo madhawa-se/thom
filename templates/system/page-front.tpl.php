@@ -113,6 +113,11 @@ $vac_body = $node->field_vacancies_signup_body[0]['value'];
 $vac_cta_url = $node->field_vacancies_signup_cta[0]['value'];
 $vac_cta_text = $node->field_vacancies_signup_text[0]['value'];
 
+$vac_header_1 = $node->field_vacancies_heading_1[0]['value'];
+$vac_body_1 = $node->field_vacancies_signup_body_1[0]['value'];
+$vac_cta_url_1 = $node->field_vacancies_signup_cta_1[0]['value'];
+$vac_cta_text_1 = $node->field_vacancies_signup_text_1[0]['value'];
+
 //$main_action_left = $node->field_ctaleft_content[0]['view'];
 //$main_action_right = $node->field_ctaright_content[0]['view'];
 ?>
@@ -348,9 +353,9 @@ $vac_cta_text = $node->field_vacancies_signup_text[0]['value'];
                 <div class="row">
                     <div class="col-sm-6">         
                         <div class="text">
-                            <h2 class="title">Working with us</h2>
-                            <p class="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor enim ad minim incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, adipiscing. </p>
-                            <a class="ui-btn in-block" href="#">FIND OUT MORE</a>
+                            <h2 class="title"><?php print $vac_header_1 ?></h2>
+                            <p class="para"><?php print $vac_body_1 ?></p>
+                            <a class="ui-btn in-block" href="<?php print $vac_cta_url_1 ?>"><?php print $vac_cta_text_1 ?></a>
                         </div>
                     </div>
                 </div>
@@ -362,17 +367,27 @@ $vac_cta_text = $node->field_vacancies_signup_text[0]['value'];
                 <div class="center">
                     <h2 class="title"><?php print $vac_header ?></h2>
                     <p class="para"><?php print $vac_body ?></p>
-                    <a class="ui-btn btn-outline" href=" <?php print $vac_cta_url ?>"><?php print $vac_cta_text ?></a>
+                    <a class="ui-btn btn-outline" href="<?php print $vac_cta_url ?>"><?php print $vac_cta_text ?></a>
                 </div>
             </div>
         </div>
 
-        <?php print $closure; ?>
+        <div class="container feed-wrap">
+            <div class="row">
+                <div class="col-sm-8 col-sm-push-4">
+                    <?php if (!empty($feeds)) { ?>
+                        <h2>News & Blog</h2>
+                        <div>
+                            <?php print $feeds; ?> 
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
 
-
-        <div class="device-xs visible-xs">xs</div>
-        <div class="device-sm visible-sm">sm</div>
-        <div class="device-md visible-md">md</div>
-        <div class="device-lg visible-lg">lg</div>
+        <div class="visible-xs hidden-sm hidden-md hidden-lg">xs</div>
+        <div class="hidden-xs visible-sm hidden-md hidden-lg">sm</div>
+        <div class="hidden-xs hidden-sm visible-md hidden-lg">md</div>
+        <div class="hidden-xs hidden-sm hidden-md visible-lg">lg</div>
     </body>
 </html>
