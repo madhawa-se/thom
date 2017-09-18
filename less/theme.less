@@ -286,7 +286,6 @@ ul.in-block{
 
 // btn
 .ui-btn,button,input[type="submit"], input[type="reset"],input[type="button"]{
-    border: 2px solid @color-white;
     border-radius: 30px;
     background-color: @color-blue;
     font-weight: bold;
@@ -294,6 +293,7 @@ ul.in-block{
     font-size: 18px;
     color:white;
     padding: 18px;
+    text-transform: uppercase;
 }
 a.ui-btn{
     display: inline-block;
@@ -301,6 +301,9 @@ a.ui-btn{
 }
 .ui-btn{
     min-width: 250px;
+}
+.btn-small{
+    max-width: 250px;
 }
 .btn-outline{
     background-color:transparent;
@@ -473,6 +476,7 @@ a.ui-btn{
                 line-height: 6.5;
                 text-align: center;
                 display: inline-block;
+                color:@color-white;
             }
             p{
                 padding: 14px 25px;
@@ -793,24 +797,111 @@ a.ui-btn{
     }
 }
 
-
-.news-card{
-    padding:20px 20px 5px 20px;
-    margin-bottom: 20px;
-    background-color:@color-white-dark;
-    .feed-link{
-        .no-link;
-        font-size: 1em;
-        color:@color-gray;
-        .title{
-            padding-bottom: 5px;
+.feed-col{
+    .news-card{
+        padding:20px 20px 5px 20px;
+        margin-bottom: 20px;
+        background-color:@color-white-dark;
+        .feed-link{
+            .no-link;
             font-size: 1em;
+            color:@color-gray;
+            .title{
+                padding-bottom: 5px;
+                font-size: 1em;
+            }
+            .date{
+                font-size: 0.778em;
+                color:@color-blue;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
         }
-        .date{
-            font-size: 0.778em;
-            color:@color-blue;
-            text-transform: uppercase;
-            font-weight: bold;
+    }
+}
+.feed-wrap{
+    padding-top:45px;
+    padding-bottom:45px;
+    .featured-col{
+
+        .content{
+            background-color: #18AFF4;
+            color: white;
+            .view-header,.info{
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .view-header{
+                h2{
+                    color: inherit;
+                    font-size: 14px;
+                    padding-top: 40px;
+                    margin-bottom: 20px;
+                }   
+            }
+            .news-card{
+                .info{
+                    .title{
+                        font-size: 30px;
+                        font-weight:bold;
+                        p{
+                            line-height: 35px;
+                        }
+                    } 
+                    .date{
+                        font-size: 14px;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        margin-top: 10px;
+                        margin-bottom: 100px;
+                    }
+                }
+                .path{
+                    margin-top: -106px;
+                    .center;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width : 767px) {
+
+    .feed-wrap{
+        padding-top:45px;
+        padding-bottom:45px;
+        .featured-col{
+            &+.feed-col{
+                margin-top: 100px;
+            }
+            .content{
+                .view-header,.info{
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
+                .view-header{
+                    h2{
+                        font-size: 14px;
+                        padding-top: 40px;
+                        margin-bottom: 20px;
+                    }   
+                }
+                .news-card{
+                    .info{
+                        .title{
+                            font-size: 25px;
+                        } 
+                        .date{
+                            margin-bottom: 40px;
+                        }
+                    }
+                    .image{
+                        img{
+                            width:100%;
+                        }
+                    }
+                }
+            }
         }
     }
 }

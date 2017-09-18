@@ -81,14 +81,35 @@ $banner_image = $node->field_homepage_image_1[0]['filepath'];
 $banner_strapline = $node->field_homepage_strapline_1[0]['value'];
 //$banner_content = $node->field_banner_content[0]['value'];
 //$banner_company = $node->field_banner_company[0]['value'];
-$banner_action = $node->field_homepage_cta_1[0]['value'];
-$banner_link = $node->field_homepage_link_1[0]['title'];
+$banner_text = $node->field_homepage_cta_1[0]['value'];
+$banner_action= $node->field_homepage_link_1[0]['value'];
 
 
 
 //services
 $services_header = $node->field_services_heading[0]['value'];
 $services_body = $node->field_services_strapline[0]['value'];
+
+
+$services_icon_1 = $node->field_services_image_1[0]['view'];
+$services_text_1 = $node->field_services_cta_text_1[0]['value'];
+$services_link_1 = $node->field_services_cta_1[0]['value'];
+
+$services_icon_2 = $node->field_services_image_2[0]['view'];
+$services_text_2 = $node->field_services_cta_text_2[0]['value'];
+$services_link_2 = $node->field_services_cta_2[0]['value'];
+
+$services_icon_3 = $node->field_services_image_3[0]['view'];
+$services_text_3 = $node->field_services_cta_text_3[0]['value'];
+$services_link_3 = $node->field_services_cta_3[0]['value'];
+
+$services_icon_4 = $node->field_services_image_4[0]['view'];
+$services_text_4 = $node->field_services_cta_text_4[0]['value'];
+$services_link_4 = $node->field_services_cta_4[0]['value'];
+
+$services_icon_5 = $node->field_services_image_5[0]['view'];
+$services_text_5 = $node->field_services_cta_text_5[0]['value'];
+$services_link_5 = $node->field_services_cta_5[0]['value'];
 
 //accounting
 $accounting_header = $node->field_onlineaccounting_heading[0]['value'];
@@ -174,6 +195,7 @@ $vac_cta_text_1 = $node->field_vacancies_signup_text_1[0]['value'];
 
             </div> <!-- /navigation -->
 
+
             <div class="mob-nav visible-xs">
                 <nav class="navbar navbar-default">
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -222,7 +244,7 @@ $vac_cta_text_1 = $node->field_vacancies_signup_text_1[0]['value'];
                     <div class="col-sm-11 col-sm-push-1">
                         <?php echo $banner_strapline ?>
 
-                        <a class="ui-btn btn-outline" href=" <?php print $banner_action ?>"><?php print $banner_link ?></a>
+                        <a class="ui-btn btn-outline" href=" <?php print $banner_action ?>"><?php print $banner_text ?></a>
                     </div>
                 </div>
             </div>
@@ -253,21 +275,40 @@ $vac_cta_text_1 = $node->field_vacancies_signup_text_1[0]['value'];
                         </div>
                     </div>
                     <ul class="ul-div  ui-clearfix">
-                        <?php
-                        for ($i = 1; $i <= 5; $i++) {
 
-                            $services_icon = $node->{"field_services_image_$i"}[0]['view'];
-                            $services_text = $node->{"field_services_cta_$i"}[0]['title'];
-                            $services_link = $node->{"field_services_cta_$i"}[0]['url'];
-                            ?>
 
-                            <li class="col-sm-2 col-sm-push-1 col-xm-12">
-                                <div class="img-card">
-                                    <div class="hidden-xs"><?php print $services_icon ?></div>
-                                    <p><?php print $services_text ?></p>
-                                </div>
-                            </li>
-                        <?php } ?>
+                        <li class="col-sm-2 col-sm-push-1 col-xm-12">
+                            <a class="img-card" href="<?php print $services_link_1 ?>">
+                                <div class="hidden-xs"><?php print $services_icon_1 ?></div>
+                                <p><?php print $services_text_1 ?></p>
+                            </a>
+                        </li>
+                        <li class="col-sm-2 col-sm-push-1 col-xm-12">
+                            <a class="img-card" href="<?php print $services_link_2 ?>">
+                                <div class="hidden-xs"><?php print $services_icon_2 ?></div>
+                                <p><?php print $services_text_2 ?></p>
+                            </a>
+                        </li>
+                        <li class="col-sm-2 col-sm-push-1 col-xm-12">
+                            <a class="img-card" href="<?php print $services_link_3 ?>">
+                                <div class="hidden-xs"><?php print $services_icon_3 ?></div>
+                                <p><?php print $services_text_3 ?></p>
+                            </a>
+                        </li>
+                        <li class="col-sm-2 col-sm-push-1 col-xm-12">
+                            <a class="img-card" href="<?php print $services_link_4 ?>">
+                                <div class="hidden-xs"><?php print $services_icon_4 ?></div>
+                                <p><?php print $services_text_4 ?></p>
+                            </a>
+                        </li>
+                        <li class="col-sm-2 col-sm-push-1 col-xm-12">
+                            <a class="img-card" href="<?php print $services_link_5 ?>">
+                                <div class="hidden-xs"><?php print $services_icon_5 ?></div>
+                                <p><?php print $services_text_5 ?></p>
+                            </a>
+                        </li>
+
+
                     </ul>
 
                 </div>
@@ -374,16 +415,77 @@ $vac_cta_text_1 = $node->field_vacancies_signup_text_1[0]['value'];
 
         <div class="container feed-wrap">
             <div class="row">
+                <!--
                 <div class="col-sm-8 col-sm-push-4">
-                    <?php if (!empty($feeds)) { ?>
-                        <h2>News & Blog</h2>
-                        <div>
-                            <?php print $feeds; ?> 
-                        </div>
-                    <?php } ?>
+                <?php if (!empty($feeds)) { ?>
+                                                                                                                                <h2>News & Blog</h2>
+                                                                                                                                <div>
+                    <?php // print $feeds; ?> 
+                                                                                                                                </div>
+                <?php } ?>
                 </div>
+                -->
+
+                <?php if (!empty($feeds)) { ?>
+                    <div>
+                        <?php print $feeds; ?> 
+                    </div>
+                <?php } ?>
+
             </div>
         </div>
+        <footer class="fluid footer">
+            <div class="container">
+                <?php if (!empty($footer_top)) { ?>
+                    <div class="row">
+                        <div class="col-sm-7">
+                        </div>
+                        <div class="col-sm-5">
+                            <?php print $footer_top; ?> 
+                        </div>
+                    </div>
+                <?php } ?>
+
+                <?php if (!empty($footer)) { ?>
+                    <div class="row">
+                        <?php print $footer; ?> 
+                    </div>
+
+                <?php } ?>
+                <?php if (!empty($footer_message)) { ?>
+                    <div class="msg">
+                        <?php print $footer_message; ?>
+                    </div>
+                <?php } ?>
+                <?php
+                /*
+                  $columns = 2;
+                  $rows = 2;
+                  $count=sizeof($primary_links);
+
+                  for($i=0;$i<$columns;$i++){
+
+                  }
+
+
+                  if (is_array($primary_links)) {
+                  ?>
+                  <?php
+                  for ($i = 0; $i < sizeof($primary_links); $i++) {
+                  $link = $primary_links[$i];
+                  ?>
+                  <li class="sliding-element"><?php
+                  $href = $link['href'] == "<front>" ? base_path() : base_path() . drupal_get_path_alias($link['href']);
+                  print "<a href='" . $href . "'>" . $link['title'] . "</a>";
+                  ?>
+                  </li>
+                  <?php } ?>
+
+                  <?php } ?>
+                  <?php } */
+                ?>
+
+        </footer>
 
         <div class="visible-xs hidden-sm hidden-md hidden-lg">xs</div>
         <div class="hidden-xs visible-sm hidden-md hidden-lg">sm</div>
