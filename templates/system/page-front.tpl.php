@@ -77,12 +77,16 @@
  * @see template_preprocess()
  * @see template_preprocess_page()
  */
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $banner_image = $node->field_homepage_image_1[0]['filepath'];
 $banner_strapline = $node->field_homepage_strapline_1[0]['value'];
 //$banner_content = $node->field_banner_content[0]['value'];
 //$banner_company = $node->field_banner_company[0]['value'];
 $banner_text = $node->field_homepage_cta_1[0]['value'];
-$banner_action= $node->field_homepage_link_1[0]['value'];
+$banner_action = $node->field_homepage_link_1[0]['value'];
 
 
 
@@ -418,10 +422,10 @@ $vac_cta_text_1 = $node->field_vacancies_signup_text_1[0]['value'];
                 <!--
                 <div class="col-sm-8 col-sm-push-4">
                 <?php if (!empty($feeds)) { ?>
-                                                                                                                                <h2>News & Blog</h2>
-                                                                                                                                <div>
-                    <?php // print $feeds; ?> 
-                                                                                                                                </div>
+                                                                                                                                                                                                                                            <h2>News & Blog</h2>
+                                                                                                                                                                                                                                            <div>
+                    <?php // print $feeds;  ?> 
+                                                                                                                                                                                                                                            </div>
                 <?php } ?>
                 </div>
                 -->
@@ -446,43 +450,134 @@ $vac_cta_text_1 = $node->field_vacancies_signup_text_1[0]['value'];
                     </div>
                 <?php } ?>
 
-                <?php if (!empty($footer)) { ?>
-                    <div class="row">
-                        <?php print $footer; ?> 
+
+                <div class="row">
+
+                    <div class="col-sm-6 col-md-7 hidden-xs">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <ul class="menu">
+                                    <li class="leaf first"><a href="/our-team">our team</a></li>
+                                    <li class="leaf"><a href="/testimonials">test</a></li>
+                                    <li class="leaf"><a href="/services">services</a></li>
+                                    <li class="leaf"><a href="/sectors">sectors</a></li>
+                                    <li class="leaf"><a href="/events">events</a></li>
+                                    <li class="leaf"><a href="/testimonials">testimonials</a></li>
+                                    <li class="leaf"><a href="/careers">careers</a></li>
+                                    <li class="leaf"><a href="/resources">resources</a></li>
+                                    <li class="leaf"><a href="/news">news</a></li>
+                                    <li class="leaf last"><a href="/accessibility-statement">accessibility</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-4">
+                                <ul class="menu">
+                                    <li class="leaf first"><a href="/our-team">our team</a></li>
+                                    <li class="leaf"><a href="/testimonials">test</a></li>
+                                    <li class="leaf"><a href="/services">services</a></li>
+                                    <li class="leaf"><a href="/sectors">sectors</a></li>
+                                    <li class="leaf"><a href="/events">events</a></li>
+                                    <li class="leaf"><a href="/testimonials">testimonials</a></li>
+                                    <li class="leaf"><a href="/careers">careers</a></li>
+                                    <li class="leaf"><a href="/resources">resources</a></li>
+                                    <li class="leaf"><a href="/news">news</a></li>
+                                    <li class="leaf last"><a href="/accessibility-statement">accessibility</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-4">
+                                <ul class="menu">
+                                    <li class="leaf first"><a href="/our-team">our team</a></li>
+                                    <li class="leaf"><a href="/testimonials">test</a></li>
+                                    <li class="leaf"><a href="/services">services</a></li>
+                                    <li class="leaf"><a href="/sectors">sectors</a></li>
+                                    <li class="leaf"><a href="/events">events</a></li>
+                                    <li class="leaf"><a href="/testimonials">testimonials</a></li>
+                                    <li class="leaf"><a href="/careers">careers</a></li>
+                                    <li class="leaf"><a href="/resources">resources</a></li>
+                                    <li class="leaf"><a href="/news">news</a></li>
+                                    <li class="leaf last"><a href="/accessibility-statement">accessibility</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
-                <?php } ?>
+
+                    <div class="col-xs-12 visible-xs">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="menu">
+                                    <li class="leaf first"><a href="/our-team">our team</a></li>
+                                    <li class="leaf"><a href="/testimonials">test</a></li>
+                                    <li class="leaf"><a href="/services">services</a></li>
+                                    <li class="leaf"><a href="/sectors">sectors</a></li>
+                                    <li class="leaf"><a href="/events">events</a></li>
+                                    <li class="leaf"><a href="/testimonials">testimonials</a></li>
+                                    <li class="leaf"><a href="/careers">careers</a></li>
+                                    <li class="leaf"><a href="/resources">resources</a></li>
+                                    <li class="leaf"><a href="/news">news</a></li>
+                                    <li class="leaf last"><a href="/accessibility-statement">accessibility</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="menu">
+                                    <li class="leaf first"><a href="/our-team">our team</a></li>
+                                    <li class="leaf"><a href="/testimonials">test</a></li>
+                                    <li class="leaf"><a href="/services">services</a></li>
+                                    <li class="leaf"><a href="/sectors">sectors</a></li>
+                                    <li class="leaf"><a href="/events">events</a></li>
+                                    <li class="leaf"><a href="/testimonials">testimonials</a></li>
+                                    <li class="leaf"><a href="/careers">careers</a></li>
+                                    <li class="leaf"><a href="/resources">resources</a></li>
+                                    <li class="leaf"><a href="/news">news</a></li>
+                                    <li class="leaf last"><a href="/accessibility-statement">accessibility</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <?php if (!empty($footer)) { ?>
+                        <?php print $footer; ?> 
+                    <?php } ?>
+
+                </div>
                 <?php if (!empty($footer_message)) { ?>
                     <div class="msg">
                         <?php print $footer_message; ?>
                     </div>
                 <?php } ?>
+
+
+
+
                 <?php
+                //var_dump($secondary_links);
                 /*
-                  $columns = 2;
-                  $rows = 2;
-                  $count=sizeof($primary_links);
+                  $vertions = [
+                  "mobile" => array("columns" => 2, "class" => "mobile ", "col_class" => "2"),
+                  "desktop" => array("coulmns" => 3, "class" => "desktop ", "col_class" => "6")
+                  ];
+                  $amount = sizeof($secondary_links);
+                  $keys = array_keys($secondary_links);
 
-                  for($i=0;$i<$columns;$i++){
-
-                  }
-
-
-                  if (is_array($primary_links)) {
-                  ?>
-                  <?php
-                  for ($i = 0; $i < sizeof($primary_links); $i++) {
-                  $link = $primary_links[$i];
-                  ?>
-                  <li class="sliding-element"><?php
+                  foreach ($vertions as $key => $platform) {
+                  print "<div class='menu-$key'" . $platform['class'] . ">";
+                  $counter = 0;
+                  $rows = ceil($amount / $platform['columns']);
+                  for ($x = 0; $x < $platform['columns']; $x++) {
+                  print "<div class='col-sm-2 menu-group'><ul>";
+                  for ($i = 0; $i < $rows; $i++) {
+                  $link = $secondary_links[$keys[$counter]];
                   $href = $link['href'] == "<front>" ? base_path() : base_path() . drupal_get_path_alias($link['href']);
-                  print "<a href='" . $href . "'>" . $link['title'] . "</a>";
-                  ?>
-                  </li>
-                  <?php } ?>
-
-                  <?php } ?>
-                  <?php } */
+                  $title = $link['title'];
+                  print "<li class='leaf'><a href='$href'>{$title}</a></li>";
+                  $counter++;
+                  if ($counter >= $amount) {
+                  break;
+                  }
+                  }
+                  print "</ul></div>";
+                  }
+                  print "</div>";
+                  } */
                 ?>
 
         </footer>

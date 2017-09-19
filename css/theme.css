@@ -545,6 +545,9 @@ a.ui-btn {
 .help .title {
   color: white;
 }
+.help .ul-div .img-card {
+  color: #ffffff;
+}
 .help .ul-div .img-card div {
   background-color: rgba(78, 32, 113, 0.3);
   width: 118px;
@@ -553,7 +556,6 @@ a.ui-btn {
   line-height: 6.5;
   text-align: center;
   display: inline-block;
-  color: #ffffff;
 }
 .help .ul-div .img-card p {
   padding: 14px 25px;
@@ -893,4 +895,10 @@ a.ui-btn {
   .feed-wrap .featured-col .content .news-card .image img {
     width: 100%;
   }
+}
+.footer {
+  background-color: #efefef;
+}
+.footer .images img {
+  padding: 20px;
 }

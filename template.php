@@ -86,4 +86,29 @@ function thomson_theme_webform_grid($element) {
     return theme('form_element', $element, theme('table', $header, $rows, array('class' => 'webform-grid webform-grid-' . $option_count)));
 }
 
+function thomson_theme_menu_tree__secondary_links($variables) {
+    var_dump($variables);
+    return '<ul class="menu">' . $variables['tree'] . '</ul>';
+}
 
+function thomson_theme_links__system_secondary_links_menu($variables) {
+    var_dump($variables);
+    $output = '';
+    foreach ($variables['links'] as $link) {
+        $output .= l($link['title'], $link['href'], $link);
+    }
+    return $output;
+}
+
+function thomson_theme_menu_local_tasks() {
+  $output = '';
+
+  if ($primary = menu_primary_local_tasks()) {
+    $output .= '<ul class="nav nav-tabs primary">' . $primary . '</ul>';
+  }
+  if ($secondary = menu_secondary_local_tasks()) {
+    $output .= '<ul class="nav nav-pills secondaryxx">' . $secondary . '</ul>';
+  }
+
+  return $output;
+}
