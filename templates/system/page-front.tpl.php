@@ -77,6 +77,74 @@
  * @see template_preprocess()
  * @see template_preprocess_page()
  */
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+$banner_image = $node->field_homepage_image_1[0]['filepath'];
+$banner_strapline = $node->field_homepage_strapline_1[0]['value'];
+//$banner_content = $node->field_banner_content[0]['value'];
+//$banner_company = $node->field_banner_company[0]['value'];
+$banner_text = $node->field_homepage_cta_1[0]['value'];
+$banner_action = $node->field_homepage_link_1[0]['value'];
+
+
+
+//services
+$services_header = $node->field_services_heading[0]['value'];
+$services_body = $node->field_services_strapline[0]['value'];
+
+
+$services_icon_1 = $node->field_services_image_1[0]['view'];
+$services_text_1 = $node->field_services_cta_text_1[0]['value'];
+$services_link_1 = $node->field_services_cta_1[0]['value'];
+
+$services_icon_2 = $node->field_services_image_2[0]['view'];
+$services_text_2 = $node->field_services_cta_text_2[0]['value'];
+$services_link_2 = $node->field_services_cta_2[0]['value'];
+
+$services_icon_3 = $node->field_services_image_3[0]['view'];
+$services_text_3 = $node->field_services_cta_text_3[0]['value'];
+$services_link_3 = $node->field_services_cta_3[0]['value'];
+
+$services_icon_4 = $node->field_services_image_4[0]['view'];
+$services_text_4 = $node->field_services_cta_text_4[0]['value'];
+$services_link_4 = $node->field_services_cta_4[0]['value'];
+
+$services_icon_5 = $node->field_services_image_5[0]['view'];
+$services_text_5 = $node->field_services_cta_text_5[0]['value'];
+$services_link_5 = $node->field_services_cta_5[0]['value'];
+
+//accounting
+$accounting_header = $node->field_onlineaccounting_heading[0]['value'];
+$accounting_body = $node->field_onlineaccounting_body[0]['value'];
+$accounting_cta_link = $node->field_onlineaccouting_cta[0]['url'];
+$accounting_cta_text = $node->field_onlineaccouting_cta[0]['title'];
+
+
+//events
+$events_header = $node->field_events_heading[0]['value'];
+$events_body = $node->field_events_signup_body[0]['value'];
+$events_cta_link = $node->field_events_signup_cta[0]['value'];
+$events_cta_text = $node->field_events_signup_cta_text[0]['value'];
+
+//testimonial
+
+$testimonial_image = $node->field_testimonials_image[0]['filepath'];
+
+//vac
+$vac_header = $node->field_vacancies_heading[0]['value'];
+$vac_body = $node->field_vacancies_signup_body[0]['value'];
+$vac_cta_url = $node->field_vacancies_signup_cta[0]['value'];
+$vac_cta_text = $node->field_vacancies_signup_text[0]['value'];
+
+$vac_header_1 = $node->field_vacancies_heading_1[0]['value'];
+$vac_body_1 = $node->field_vacancies_signup_body_1[0]['value'];
+$vac_cta_url_1 = $node->field_vacancies_signup_cta_1[0]['value'];
+$vac_cta_text_1 = $node->field_vacancies_signup_text_1[0]['value'];
+
+//$main_action_left = $node->field_ctaleft_content[0]['view'];
+//$main_action_right = $node->field_ctaright_content[0]['view'];
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -131,6 +199,7 @@
 
             </div> <!-- /navigation -->
 
+
             <div class="mob-nav visible-xs">
                 <nav class="navbar navbar-default">
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -173,40 +242,349 @@
 
         </div>
         <!-- /header -->
+        <div class="fluid banner" style="background-image: url(<?php print $banner_image ?>);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-11 col-sm-push-1">
+                        <?php echo $banner_strapline ?>
+
+                        <a class="ui-btn btn-outline" href=" <?php print $banner_action ?>"><?php print $banner_text ?></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fluid help">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-push-2 col-sm-8">
+
+                        <div id="content">
+                            <?php if (!empty($title)) { ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php } ?>
+                            <?php if (!empty($tabs)): ?><div class="tabs"><?php print $tabs; ?></div><?php endif; ?>
+                            <?php
+                            if (!empty($messages)): print $messages;
+                            endif;
+                            ?>
+                            <?php
+                            if (!empty($help)): print $help;
+                            endif;
+                            ?>
+                            <div id="content-content" class="clear-block">
+                                <div class="para">
+                                    <?php print $content; ?>
+                                </div> <!-- /content -->
+                            </div>
+                            <?php print $feed_icons; ?>
+                        </div>
+                    </div>
+                    <ul class="ul-div  ui-clearfix">
 
 
-        <div id="page" class="container">
+                        <li class="col-sm-2 col-sm-push-1 col-xm-12">
+                            <a class="img-card" href="<?php print $services_link_1 ?>">
+                                <div class="hidden-xs"><?php print $services_icon_1 ?></div>
+                                <p><?php print $services_text_1 ?></p>
+                            </a>
+                        </li>
+                        <li class="col-sm-2 col-sm-push-1 col-xm-12">
+                            <a class="img-card" href="<?php print $services_link_2 ?>">
+                                <div class="hidden-xs"><?php print $services_icon_2 ?></div>
+                                <p><?php print $services_text_2 ?></p>
+                            </a>
+                        </li>
+                        <li class="col-sm-2 col-sm-push-1 col-xm-12">
+                            <a class="img-card" href="<?php print $services_link_3 ?>">
+                                <div class="hidden-xs"><?php print $services_icon_3 ?></div>
+                                <p><?php print $services_text_3 ?></p>
+                            </a>
+                        </li>
+                        <li class="col-sm-2 col-sm-push-1 col-xm-12">
+                            <a class="img-card" href="<?php print $services_link_4 ?>">
+                                <div class="hidden-xs"><?php print $services_icon_4 ?></div>
+                                <p><?php print $services_text_4 ?></p>
+                            </a>
+                        </li>
+                        <li class="col-sm-2 col-sm-push-1 col-xm-12">
+                            <a class="img-card" href="<?php print $services_link_5 ?>">
+                                <div class="hidden-xs"><?php print $services_icon_5 ?></div>
+                                <p><?php print $services_text_5 ?></p>
+                            </a>
+                        </li>
 
 
-            <div id="container" class="clear-block">
-                <?php if (!empty($left)): ?>
-                    <div id="sidebar-left" class="column sidebar download">
-                        <?php print $left; ?>
-                    </div> <!-- /sidebar-left -->
-                <?php endif; ?>
+                    </ul>
 
-                <div id="main" class="column"><div id="main-squeeze">
-                        <?php if (!empty($breadcrumb)): ?><div id="breadcrumb"><?php print $breadcrumb; ?></div><?php endif; ?>
-                        <?php if (!empty($mission)): ?><div id="mission"><?php print $mission; ?></div><?php endif; ?>
+                </div>
+            </div>
+        </div>
+
+        <div class="fluid accounting">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-sm-6">
+                        <h2 class="title"><?php print $accounting_header ?></h2>
+                        <p class="para"><?php print $accounting_body ?></p>
+                        <a class="ui-btn btn-outline in-block" href=" <?php print $accounting_cta_link ?>"><?php print $accounting_cta_text ?></a>
+                    </div>
+
+                    <div class="col-sm-6 img-panel">
+                        <ul class="in-block">
+                            <?php
+                            for ($i = 1; $i <= 4; $i++) {
+                                $accounting_icon = $node->{"field_onlineaccouting_image_$i"}[0]['view'];
+                                ?>
+                                <li class="">
+                                    <div class="img-card">
+                                        <?php print $accounting_icon ?>
+                                    </div>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
 
 
-                    </div></div> <!-- /main-squeeze /main -->
+        <div class="events">
+            <div class="container">
+                <div class="row">
 
-                <?php if (!empty($right)): ?>
-                    <div id="sidebar-right x" class="column sidebar">
-                        <?php print $right; ?>
-                    </div> <!-- /sidebar-right -->
-                <?php endif; ?>
+                    <div class="col-sm-6 col-sm-push-1">
+                        <h2 class="title"><?php print $events_header ?></h2>
+                        <p class="para"><?php print $events_body ?></p>
+                        <a class="ui-btn in-block" href=" <?php print $events_cta_link ?>"><?php print $events_cta_text ?></a>
+                    </div>
+                    <?php if (!empty($events)) { ?>
+                        <div class="col-sm-4 col-sm-push-1">
+                            <?php print $events; ?>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
 
-            </div> <!-- /container -->
 
 
 
-        </div> <!-- /page -->
+        <div class="fluid testimonial" style="background-image: url(<?php print $testimonial_image ?>)">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-push-6 col-sm-6 frame">
+                        <!-- 
+                        <div class="text">
+                            <p class="title">“A very professional firm, who understand our business and deliver a first class service.”</p>
+                            <p class="name">Ian Fraser, First Scottish Group Limited</p>
+                            <a class="ui-btn btn-outline">TESTIMONIALS</a>
+                        </div>
+                        -->
+                        <?php if (!empty($testimonial)) { ?>
+                            <div id="testimonial_slider" class="carousel slide" data-ride="carousel">
+                                <?php print $testimonial; ?>            
+                            <?php } ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
-        <?php print $closure; ?>
+        <div class="fluid vacancies_intro" style="background-image: url(<?php print $testimonial_image ?>)">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">         
+                        <div class="text">
+                            <h2 class="title"><?php print $vac_header_1 ?></h2>
+                            <p class="para"><?php print $vac_body_1 ?></p>
+                            <a class="ui-btn in-block" href="<?php print $vac_cta_url_1 ?>"><?php print $vac_cta_text_1 ?></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="vacancies">
+            <div class="container">   
+                <div class="center">
+                    <h2 class="title"><?php print $vac_header ?></h2>
+                    <p class="para"><?php print $vac_body ?></p>
+                    <a class="ui-btn btn-outline" href="<?php print $vac_cta_url ?>"><?php print $vac_cta_text ?></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container feed-wrap">
+            <div class="row">
+                <!--
+                <div class="col-sm-8 col-sm-push-4">
+                <?php if (!empty($feeds)) { ?>
+                                                                                                                                                                                                                                            <h2>News & Blog</h2>
+                                                                                                                                                                                                                                            <div>
+                    <?php // print $feeds;  ?> 
+                                                                                                                                                                                                                                            </div>
+                <?php } ?>
+                </div>
+                -->
+
+                <?php if (!empty($feeds)) { ?>
+                    <div>
+                        <?php print $feeds; ?> 
+                    </div>
+                <?php } ?>
+
+            </div>
+        </div>
+        <footer class="fluid footer">
+            <div class="container">
+                <?php if (!empty($footer_top)) { ?>
+                    <div class="row">
+                        <div class="col-sm-7">
+                        </div>
+                        <div class="col-sm-5">
+                            <?php print $footer_top; ?> 
+                        </div>
+                    </div>
+                <?php } ?>
+
+
+                <div class="row">
+
+                    <div class="col-sm-6 col-md-7 hidden-xs">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <ul class="menu">
+                                    <li class="leaf first"><a href="/our-team">our team</a></li>
+                                    <li class="leaf"><a href="/testimonials">test</a></li>
+                                    <li class="leaf"><a href="/services">services</a></li>
+                                    <li class="leaf"><a href="/sectors">sectors</a></li>
+                                    <li class="leaf"><a href="/events">events</a></li>
+                                    <li class="leaf"><a href="/testimonials">testimonials</a></li>
+                                    <li class="leaf"><a href="/careers">careers</a></li>
+                                    <li class="leaf"><a href="/resources">resources</a></li>
+                                    <li class="leaf"><a href="/news">news</a></li>
+                                    <li class="leaf last"><a href="/accessibility-statement">accessibility</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-4">
+                                <ul class="menu">
+                                    <li class="leaf first"><a href="/our-team">our team</a></li>
+                                    <li class="leaf"><a href="/testimonials">test</a></li>
+                                    <li class="leaf"><a href="/services">services</a></li>
+                                    <li class="leaf"><a href="/sectors">sectors</a></li>
+                                    <li class="leaf"><a href="/events">events</a></li>
+                                    <li class="leaf"><a href="/testimonials">testimonials</a></li>
+                                    <li class="leaf"><a href="/careers">careers</a></li>
+                                    <li class="leaf"><a href="/resources">resources</a></li>
+                                    <li class="leaf"><a href="/news">news</a></li>
+                                    <li class="leaf last"><a href="/accessibility-statement">accessibility</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-4">
+                                <ul class="menu">
+                                    <li class="leaf first"><a href="/our-team">our team</a></li>
+                                    <li class="leaf"><a href="/testimonials">test</a></li>
+                                    <li class="leaf"><a href="/services">services</a></li>
+                                    <li class="leaf"><a href="/sectors">sectors</a></li>
+                                    <li class="leaf"><a href="/events">events</a></li>
+                                    <li class="leaf"><a href="/testimonials">testimonials</a></li>
+                                    <li class="leaf"><a href="/careers">careers</a></li>
+                                    <li class="leaf"><a href="/resources">resources</a></li>
+                                    <li class="leaf"><a href="/news">news</a></li>
+                                    <li class="leaf last"><a href="/accessibility-statement">accessibility</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-12 visible-xs">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="menu">
+                                    <li class="leaf first"><a href="/our-team">our team</a></li>
+                                    <li class="leaf"><a href="/testimonials">test</a></li>
+                                    <li class="leaf"><a href="/services">services</a></li>
+                                    <li class="leaf"><a href="/sectors">sectors</a></li>
+                                    <li class="leaf"><a href="/events">events</a></li>
+                                    <li class="leaf"><a href="/testimonials">testimonials</a></li>
+                                    <li class="leaf"><a href="/careers">careers</a></li>
+                                    <li class="leaf"><a href="/resources">resources</a></li>
+                                    <li class="leaf"><a href="/news">news</a></li>
+                                    <li class="leaf last"><a href="/accessibility-statement">accessibility</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="menu">
+                                    <li class="leaf first"><a href="/our-team">our team</a></li>
+                                    <li class="leaf"><a href="/testimonials">test</a></li>
+                                    <li class="leaf"><a href="/services">services</a></li>
+                                    <li class="leaf"><a href="/sectors">sectors</a></li>
+                                    <li class="leaf"><a href="/events">events</a></li>
+                                    <li class="leaf"><a href="/testimonials">testimonials</a></li>
+                                    <li class="leaf"><a href="/careers">careers</a></li>
+                                    <li class="leaf"><a href="/resources">resources</a></li>
+                                    <li class="leaf"><a href="/news">news</a></li>
+                                    <li class="leaf last"><a href="/accessibility-statement">accessibility</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <?php if (!empty($footer)) { ?>
+                        <?php print $footer; ?> 
+                    <?php } ?>
+
+                </div>
+                <?php if (!empty($footer_message)) { ?>
+                    <div class="msg">
+                        <?php print $footer_message; ?>
+                    </div>
+                <?php } ?>
+
+
+
+
+                <?php
+                //var_dump($secondary_links);
+                /*
+                  $vertions = [
+                  "mobile" => array("columns" => 2, "class" => "mobile ", "col_class" => "2"),
+                  "desktop" => array("coulmns" => 3, "class" => "desktop ", "col_class" => "6")
+                  ];
+                  $amount = sizeof($secondary_links);
+                  $keys = array_keys($secondary_links);
+
+                  foreach ($vertions as $key => $platform) {
+                  print "<div class='menu-$key'" . $platform['class'] . ">";
+                  $counter = 0;
+                  $rows = ceil($amount / $platform['columns']);
+                  for ($x = 0; $x < $platform['columns']; $x++) {
+                  print "<div class='col-sm-2 menu-group'><ul>";
+                  for ($i = 0; $i < $rows; $i++) {
+                  $link = $secondary_links[$keys[$counter]];
+                  $href = $link['href'] == "<front>" ? base_path() : base_path() . drupal_get_path_alias($link['href']);
+                  $title = $link['title'];
+                  print "<li class='leaf'><a href='$href'>{$title}</a></li>";
+                  $counter++;
+                  if ($counter >= $amount) {
+                  break;
+                  }
+                  }
+                  print "</ul></div>";
+                  }
+                  print "</div>";
+                  } */
+                ?>
+
+        </footer>
+
+        <div class="visible-xs hidden-sm hidden-md hidden-lg">xs</div>
+        <div class="hidden-xs visible-sm hidden-md hidden-lg">sm</div>
+        <div class="hidden-xs hidden-sm visible-md hidden-lg">md</div>
+        <div class="hidden-xs hidden-sm hidden-md visible-lg">lg</div>
     </body>
 </html>
